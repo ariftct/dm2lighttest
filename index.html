@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Demo Site !</title>
+    <style>
+    .parallax-container {
+      height: 290px;
+    }
+	body
+	{
+	width:290px;
+	 
+  margin:0 auto;
+	}
+	input[type=email] { width: 290px}
+	input[type=password] { width: 290px}
+	.sbtn {width:120px;padding:10px; margin-left:79px;;}
+    </style>
+</head>
+
+<body>
+
+    <!-- Modal Structure LogIn -->
+    <div id="modal1" class="">
+        <div class="modal-content">
+            <h3 align="center">Login</h3>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+						<label for="email">Email</label> <br>
+                            <input id="email_log" type="email" class="validate">
+							<br>
+							<br>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                               
+                                <label for="password">Password</label> <br>
+								 <input id="password_log" type="password" class="validate">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+			
+			<br>
+            <button class="sbtn"   onclick="LogIN()">LogIn</button>
+        </div>
+    </div>
+
+    
+  
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="SignUP()"></a>
+    </div>
+  </div>
+  <!-- Modal Structure Sign up -->
+
+  <div id="modal2" class="">
+    <div class="">
+      
+          <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="first_name" type="hidden" class="validate">
+          <label for="first_name"></label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="hidden" class="validate">
+          <label for="last_name"></label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="username" type="hidden" class="validate">
+          <label for="username"></label>
+        </div>
+      </div>
+        <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="hidden" class="validate">
+          <label for="password"></label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="hidden" class="validate">
+          <label for="email"></label>
+        </div>
+      </div>
+    </form>
+  </div>
+    </div>
+
+
+
+    
+  
+ 
+
+
+    
+    <!--scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+    <script src="js/init.js"></script>
+    <script>
+        $(document).ready(function() {
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal-trigger').leanModal();
+        });
+        
+        $(document).ready(function(){
+            $('.parallax').parallax();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,1 +1,1 @@
-# dm2lighttest
+# lightdmtest
