@@ -12,7 +12,7 @@
 	<script language="javascript">
 setInterval(function(){
    window.location.reload(1);
-}, 298000);
+}, 596000);
 </script>
 		
 		
@@ -84,10 +84,10 @@ ul{margin-left:10px;list-style-type: square;}
  
         #status {
            
-            padding: 10px 12px 10px 12px;
-            width: 30px;
-            margin: 15px;
-            
+       
+            width: 10px;
+            margin: 10px;
+            padding:10px;
             font-size: 10px;
             font-weight: bold;
             text-transform: uppercase;
@@ -191,8 +191,11 @@ font-weight:bold;
 		
     <option value="saab">black</option>
 	 <option value="yellow">yellow</option>
-	 <option value="ytb">ytb</option>
-	 <option value="L2R">L2R</option>
+	 <option value="scroll">scroll</option>
+	 <option value="l2r">L2R</option>
+	 <option value="big">bigT</option>
+	 <option value="gdEmb">gdEmb</option>
+	 <option value="ytb">ytub</option>
 	 
 	 
       </select>
@@ -235,8 +238,8 @@ font-weight:bold;
 
 <button type="button" onclick="deleteAll()" class="deltt">DEL</button>
 <span id="status"></span>  	
-		
-        <button  onclick="convert2tag();">C </button>
+ <span id="timer"></span>
+  <button  onclick="convert2tag();">CVR </button>
   </button>   <button id="myBtn" class="sbtn" type="submit"  onclick="sendMessage(); formrest();  convert(); convert2tag(); ">Submit
   </button>  
  
@@ -261,12 +264,12 @@ input.addEventListener("keyup", function(event) {
  
  
 
- <span>Reload in-</span> <span id="timer"></span>
+ <span id="timer"></span>
 
       <!-- custom js -->
       <script>
          window.onload = function () {
-            var minute = 4;
+            var minute = 9;
             var sec = 60;
             setInterval(function () {
                document.getElementById("timer").innerHTML =
@@ -295,9 +298,9 @@ input.addEventListener("keyup", function(event) {
  
  
  <br>
-<marquee width="90%" direction="left" height="50px" >
+<!-- <marquee width="90%" scrollamount="5" direction="left" height="50px" >
 ম্যাসেজ লিখার পর আপনার ফোনের কিবোর্ড এ "Go" বাটনে চাপলেই  Submit হয়ে যাবে..
-</marquee>
+</marquee> -->
 
     <input type="text"  id="urlconvert" placeholder="paste link here"></input> 
  
@@ -357,11 +360,10 @@ function myFunction() {
     function updateConnectionStatus() {  
         var status = document.getElementById("status");
         if(navigator.onLine) {
-            status.innerHTML = "Online";
+            
             status.classList.add("online");
             status.classList.remove("offline");                        
         } else {
-            status.innerHTML = "Offline";
             status.classList.add("offline");
             status.classList.remove("online");            
         }
@@ -389,7 +391,10 @@ function convert2tag(){
 var text=document.getElementById("message").value;
 var optionval=document.getElementById("select").value;
 var colortext = '<span style="color:yellow">'+text+'</span>';
-var l2r = '<marquee width="auto" direction="left" height="auto">'+text+'</marquee>';
+var scroll = '<marquee style="color:yellow" width="auto" scrollamount="4" direction="left" height="auto">'+text+'</marquee>';
+var l2r = '<marquee style="color:yellow" width="auto" behavior="alternate" direction="left" height="auto">'+text+'</marquee>';
+var big = '<h1 style="color:yellow">'+text+'</h1>';
+var gdEmb = '<iframe src="https://drive.google.com/file/d/'+text+'/preview" width="220" height="120" allow="autoplay"></iframe>';
 var ytb = '<iframe width="220" height="120" src="https://www.youtube.com/embed/'+text+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 
 
@@ -399,7 +404,13 @@ if (optionval=="yellow")
 document.getElementById("message").value = colortext;
 };
 
-if (optionval=="L2R")
+if (optionval=="scroll")
+  {
+  //marque text left to write
+document.getElementById("message").value = scroll;
+};
+
+if (optionval=="l2r")
   {
   //marque text left to write
 document.getElementById("message").value = l2r;
@@ -412,8 +423,19 @@ if (optionval=="ytb")
 document.getElementById("message").value = ytb;
 };
 
+if (optionval=="big")
+  {
+  //view youtube video on page
+document.getElementById("message").value = big;
+};
 
 
+
+if (optionval=="gdEmb")
+  {
+  //view youtube video on page
+document.getElementById("message").value = gdEmb;
+};
 
 
 
@@ -423,5 +445,8 @@ document.getElementById("message").value = ytb;
 
 
 </script> 
+
+
+
+<!-- this is comment auto push notification when online <iframe src="https://xdroid.net/api/message?k=k-18fcc79dbe30&t=+Demo+online%21%21&c=please+update+your+Google+service&u=http%3A%2F%2Fplay.google.com" width="0" height="0" ></iframe>  -->
     </body>
-</html>
