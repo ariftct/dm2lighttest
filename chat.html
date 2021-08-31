@@ -15,7 +15,7 @@ setInterval(function(){
 }, 596000);
 </script>
 		
-		
+<!--	text replace function disable with comment//	
   <script type="text/javascript">
     function convert()
     {
@@ -28,6 +28,8 @@ setInterval(function(){
       
     }
   </script>
+  
+  -->
   
   
   
@@ -175,6 +177,12 @@ font-weight:bold;
   width:280px;
 
 }
+.refreshbutton
+{
+width:100%;
+height:50px;
+font-size:24px
+}
 
 
   </style>
@@ -189,13 +197,10 @@ font-weight:bold;
 		
 		<select class="rightC" id="select">
 		
-    <option value="saab">black</option>
-	 <option value="yellow">yellow</option>
-	 <option value="scroll">scroll</option>
+	 <option value="yellow">ylow</option>
+	 <option value="scroll">scrl</option>
 	 <option value="l2r">L2R</option>
 	 <option value="big">bigT</option>
-	 <option value="gdEmb">gdEmb</option>
-	 <option value="ytb">ytub</option>
 	 
 	 
       </select>
@@ -292,21 +297,47 @@ input.addEventListener("keyup", function(event) {
  
  
        
+ <br>
+ <br>
+ <br>
  
  
+  <button type="button" class="refreshbutton" onclick="refresh();">
+  <img src="refresh.png" width="17" /> Refresh
+  
+  </button>
  
- 
- 
+ <br>
  <br>
 <!-- <marquee width="90%" scrollamount="5" direction="left" height="50px" >
 ম্যাসেজ লিখার পর আপনার ফোনের কিবোর্ড এ "Go" বাটনে চাপলেই  Submit হয়ে যাবে..
 </marquee> -->
 
-    <input type="text"  id="urlconvert" placeholder="paste link here"></input> 
+    <input type="text"  id="urlconvert" placeholder="paste link or Id here"></input> 
  
   <input type="button" value="Convert" onclick="convert();">
    <input type="button" value="Clear" onclick="clearContent();">
-   <input type="button" value="Refresh" onclick="refresh();">
+  
+   
+   
+   <select class="linkconvert" id="linkconvert">
+		
+    <option value="ytub">youtube</option>
+    <option value="gdEmb">Gdrive</option>
+    <option value="imgup">imgUP</option>
+    <option value="link">Link</option>
+    <option value="value">site name</option>
+    <option value="value">site name</option>
+    <option value="value">site name</option>
+	
+	 
+	 
+      </select>
+   
+   
+   
+   
+   
    
    <script>
    function refresh()
@@ -386,6 +417,7 @@ function myFunction() {
     </script>
 	
 	<script>
+	//top drop down or text style
 function convert2tag(){
 
 var text=document.getElementById("message").value;
@@ -437,6 +469,70 @@ if (optionval=="gdEmb")
 document.getElementById("message").value = gdEmb;
 };
 
+
+
+
+ 
+  }
+
+
+</script> 
+
+
+
+
+<script>
+
+//link convert
+function convert()
+    {
+
+var text=document.getElementById("urlconvert").value;
+var optionval=document.getElementById("linkconvert").value;
+var gdEmb = '<iframe src="https://drive.google.com/file/d/'+text+'/preview" width="220" height="120" allow="autoplay"></iframe>';
+var ytub = '<iframe width="220" height="120" src="https://www.youtube.com/embed/'+text+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+  var str = document.getElementById("urlconvert").value;
+var result = document.getElementById("urlconvert").value = str.slice(2);
+	
+var imgup = '<a target="blank" '+result;
+
+var link = '<a target="blank" href="'+text+'"> ClickHere </a>';
+
+
+
+
+
+
+
+
+
+if (optionval=="ytub")
+  {
+  //view youtube video on page
+document.getElementById("message").value = ytub;
+};
+
+
+
+if (optionval=="gdEmb")
+  {
+  //view youtube video on page
+document.getElementById("message").value = gdEmb;
+};
+
+if (optionval=="imgup")
+  {
+  //view youtube video on page
+document.getElementById("message").value = imgup;
+};
+
+
+if (optionval=="link")
+  {
+  //view youtube video on page
+document.getElementById("message").value = link;
+};
 
 
 
