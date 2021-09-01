@@ -324,11 +324,10 @@ input.addEventListener("keyup", function(event) {
 		
     <option value="ytub">youtube</option>
     <option value="gdEmb">Gdrive</option>
-    <option value="imgup">imgUP</option>
-    <option value="link">Link</option>
-    <option value="value">site name</option>
-    <option value="value">site name</option>
-    <option value="value">site name</option>
+    <option value="imgup">imgUPid</option>
+    <option value="link">Url</option>
+    <option value="gdrlnk">gdDirLink</option>
+    <option value="gdlink2">gdirlnk2id</option>
 	
 	 
 	 
@@ -499,8 +498,9 @@ var imgup = '<a target="blank" '+result;
 
 var link = '<a target="blank" href="'+text+'"> ClickHere </a>';
 
+var gdrlnk = 'https://drive.google.com/uc?export=download&id='+text;
 
-
+var gdlink2 = 'https://www.googleapis.com/drive/v3/files/'+text+'?alt=media&key=AIzaSyAHIDPKFSVbDwk-NdlAW8n3uh2q6AJkyAA';
 
 
 
@@ -534,6 +534,19 @@ if (optionval=="link")
 document.getElementById("message").value = link;
 };
 
+
+if (optionval=="gdrlnk")
+  {
+  //view youtube video on page
+document.getElementById("message").value = gdrlnk;
+};
+
+
+if (optionval=="gdlink2")
+  {
+  //view youtube video on page
+document.getElementById("message").value = gdlink2;
+};
 
 
  
